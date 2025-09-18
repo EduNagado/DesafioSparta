@@ -2,11 +2,13 @@ package com.DesafioSparta.Eduardo.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.util.List;
 
 public class Cota {
     private long id;
     private LocalDate data;
     private BigDecimal ValorCotaAtual;
+    private List<PosicaoDiaria> posicao;
 
     public long getId() {
         return id;

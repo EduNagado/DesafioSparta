@@ -1,12 +1,11 @@
 package com.DesafioSparta.Eduardo.model;
 
-import java.math.BigDecimal;
-
 public class PosicaoDiaria {
     private long id;
     private Cotista cotista;
-    private Cota dia;
+    private Cota cota;
     private int quantidade;
+
 
     public long getId() {
         return id;
@@ -17,7 +16,7 @@ public class PosicaoDiaria {
     }
 
     public Cota getDia() {
-        return dia;
+        return cota;
     }
 
     public int getQuantidade() {
@@ -25,10 +24,10 @@ public class PosicaoDiaria {
     }
 
 
-    public PosicaoDiaria(long id, Cotista cotista, Cota dia, int quantidade) {
+    public PosicaoDiaria(long id, Cotista cotista, Cota cota, int quantidade) {
         this.id = id;
         this.cotista = cotista;
-        this.dia = dia;
+        this.cota = cota;
         this.quantidade = quantidade;
     }
 
@@ -37,7 +36,7 @@ public class PosicaoDiaria {
         final StringBuffer sb = new StringBuffer("PosicaoDiaria{");
         sb.append("id=").append(id);
         sb.append(", cotista=").append(cotista);
-        sb.append(", dia=").append(dia);
+        sb.append(", dia=").append(cota);
         sb.append(", quantidade=").append(quantidade);
         sb.append('}');
         return sb.toString();
