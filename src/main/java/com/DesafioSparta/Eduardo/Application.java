@@ -1,15 +1,16 @@
 package com.DesafioSparta.Eduardo;
 
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import com.DesafioSparta.Eduardo.model.Cota;
 import com.DesafioSparta.Eduardo.model.Cotista;
 import com.DesafioSparta.Eduardo.model.PosicaoDiaria;
 import com.DesafioSparta.Eduardo.model.Taxa;
 import com.DesafioSparta.Eduardo.service.CalculoService;
-import org.springframework.boot.SpringApplication;
-import org.springframework.boot.autoconfigure.SpringBootApplication;
-
-import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @SpringBootApplication
 public class Application {
@@ -21,7 +22,7 @@ public class Application {
         Cota cota1 = new Cota(
                 2L,
                 LocalDate.of(2025, 9, 18),
-                new BigDecimal("100.00")
+                new BigDecimal("200.00")
         );
         PosicaoDiaria posicao1 = new PosicaoDiaria(3L, cotista1, cota1, 30);
         Taxa taxa1 = new Taxa(0.01);
