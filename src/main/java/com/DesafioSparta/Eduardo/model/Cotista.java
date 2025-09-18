@@ -1,8 +1,12 @@
 package com.DesafioSparta.Eduardo.model;
 
+import java.util.List;
+
 public class Cotista {
     private Long id;
     private String nome;
+
+    private List<PosicaoDiaria> posicao;
 
     public Long getId() {
         return id;

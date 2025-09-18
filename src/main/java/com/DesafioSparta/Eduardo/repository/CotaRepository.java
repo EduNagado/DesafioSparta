@@ -1,0 +1,9 @@
+package com.DesafioSparta.Eduardo.repository;
+
+import com.DesafioSparta.Eduardo.model.Cota;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
+
+@Repository
+public interface CotaRepository extends JpaRepository<Cota, Long> {
+}

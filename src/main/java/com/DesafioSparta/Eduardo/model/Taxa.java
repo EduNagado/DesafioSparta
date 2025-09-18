@@ -4,6 +4,11 @@ import java.math.BigDecimal;
 
 public class Taxa {
     private double percentual;
+    private Long id;
+
+    public Long getId() {
+        return id;
+    }
 
     public double getPercentual() {
         return percentual;
@@ -17,6 +22,7 @@ public class Taxa {
     public String toString() {
         final StringBuffer sb = new StringBuffer("Taxa{");
         sb.append("percentual=").append(percentual);
+        sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();
     }
