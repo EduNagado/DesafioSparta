@@ -1,6 +1,6 @@
 package com.DesafioSparta.Eduardo.service;
 
-import com.DesafioSparta.Eduardo.model.PosicaoDiaria;
+import com.DesafioSparta.Eduardo.model.NegociacaoDiaria;
 import com.DesafioSparta.Eduardo.model.Taxa;
 import org.springframework.stereotype.Service;
 
@@ -10,20 +10,20 @@ import java.math.RoundingMode;
 @Service
 public class CalculoService {
 
-    public BigDecimal valorDoDia(PosicaoDiaria posicaoDiaria){
-        return posicaoDiaria.getDia()
+    public BigDecimal valorDoDia(NegociacaoDiaria negociacaoDiaria){
+        return negociacaoDiaria.getCota()
                 .getCotaAtual()
-                        .multiply(BigDecimal.valueOf(posicaoDiaria.getQuantidade()));
+                        .multiply(BigDecimal.valueOf(negociacaoDiaria.getQuantidade()));
 
     }
 
-    public BigDecimal calcularTaxa ( PosicaoDiaria posicaoDiaria, Taxa taxa){
-        BigDecimal valorDia = valorDoDia(posicaoDiaria);
+    public BigDecimal calcularTaxa (NegociacaoDiaria negociacaoDiaria, Taxa taxa){
+        BigDecimal valorDia = valorDoDia(negociacaoDiaria);
         return valorDia.multiply(BigDecimal.valueOf(taxa.getPercentual()));
     }
 
-    public  BigDecimal calcularTaxaDiaria (PosicaoDiaria posicaoDiaria, Taxa taxa){
-        BigDecimal taxaDiaria = calcularTaxa(posicaoDiaria, taxa);
+    public  BigDecimal calcularTaxaDiaria (NegociacaoDiaria negociacaoDiaria, Taxa taxa){
+        BigDecimal taxaDiaria = calcularTaxa(negociacaoDiaria, taxa);
         return taxaDiaria.divide(BigDecimal.valueOf(252), 2, RoundingMode.HALF_UP);
     }
 }

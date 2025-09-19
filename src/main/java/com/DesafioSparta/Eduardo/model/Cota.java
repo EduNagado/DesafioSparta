@@ -1,14 +1,25 @@
 package com.DesafioSparta.Eduardo.model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 
+@Entity
+@Table(name = "cota")
 public class Cota {
+
+    @Id
     private long id;
     private LocalDate data = LocalDate.now();
     private BigDecimal valorCotaAtual;
-    private List<PosicaoDiaria> posicao;
+
+    @OneToMany(mappedBy = "cota")
+    private List<NegociacaoDiaria> posicao;
 
     public long getId() {
         return id;

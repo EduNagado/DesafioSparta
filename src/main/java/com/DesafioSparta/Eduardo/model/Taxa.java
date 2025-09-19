@@ -1,8 +1,15 @@
 package com.DesafioSparta.Eduardo.model;
 
-import java.math.BigDecimal;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
+import java.math.BigDecimal;
+@Entity
+@Table(name= "taxa")
 public class Taxa {
+
+    @Id
     private Long id;
     private double percentual;
 
@@ -15,7 +22,7 @@ public class Taxa {
         return percentual;
     }
 
-    public Taxa(double percentual) {
+    public void setPercentual(double percentual) {
         this.percentual = percentual;
     }
 

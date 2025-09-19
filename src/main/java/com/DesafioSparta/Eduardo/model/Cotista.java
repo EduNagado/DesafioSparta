@@ -1,12 +1,18 @@
 package com.DesafioSparta.Eduardo.model;
 
+import jakarta.persistence.*;
+
 import java.util.List;
 
+@Entity
+@Table(name="cotista")
 public class Cotista {
+    @Id
     private Long id;
     private String nome;
 
-    private List<PosicaoDiaria> posicao;
+    @OneToMany(mappedBy = "cotista")
+    private List<NegociacaoDiaria> posicao;
 
     public Long getId() {
         return id;
