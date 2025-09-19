@@ -3,8 +3,9 @@ package com.DesafioSparta.Eduardo.model;
 import java.math.BigDecimal;
 
 public class Taxa {
-    private double percentual;
     private Long id;
+    private double percentual;
+
 
     public Long getId() {
         return id;

@@ -15,7 +15,7 @@ public class PosicaoDiaria {
         return cotista;
     }
 
-    public Cota getDia() {
+    public Cota getCota() {
         return cota;
     }
 
@@ -23,11 +23,7 @@ public class PosicaoDiaria {
         return quantidade;
     }
 
-
-    public PosicaoDiaria(long id, Cotista cotista, Cota cota, int quantidade) {
-        this.id = id;
-        this.cotista = cotista;
-        this.cota = cota;
+    public void setQuantidade(int quantidade) {
         this.quantidade = quantidade;
     }
 
