@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Cota {
     private long id;
-    private LocalDate data;
-    private BigDecimal ValorCotaAtual;
+    private LocalDate data = LocalDate.now();
+    private BigDecimal valorCotaAtual;
     private List<PosicaoDiaria> posicao;
 
     public long getId() {
@@ -15,19 +15,15 @@ public class Cota {
     }
 
     public BigDecimal getCotaAtual() {
-        return ValorCotaAtual;
+        return valorCotaAtual;
     }
 
     public LocalDate getData() {
         return data;
     }
 
-
-
-    public Cota(long id, LocalDate data, BigDecimal valorCotaAtual) {
-        this.id = id;
-        this.data = data;
-        ValorCotaAtual = valorCotaAtual;
+    public void setValorCotaAtual(BigDecimal valorCotaAtual) {
+        this.valorCotaAtual = valorCotaAtual;
     }
 
     @Override
@@ -35,7 +31,7 @@ public class Cota {
         final StringBuffer sb = new StringBuffer("Cota{");
         sb.append("id=").append(id);
         sb.append(", data=").append(data);
-        sb.append(", CotaAtual=").append(ValorCotaAtual);
+        sb.append(", CotaAtual=").append(valorCotaAtual);
         sb.append('}');
         return sb.toString();
     }

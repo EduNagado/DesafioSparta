@@ -24,10 +24,7 @@ public class Cotista {
         this.nome = nome;
     }
 
-    public Cotista(Long id, String nome) {
-        this.id = id;
-        this.nome=nome;
-    }
+
 
     @Override
     public String toString() {
