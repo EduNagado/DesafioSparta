@@ -1,8 +1,19 @@
 package com.DesafioSparta.Eduardo.model;
 
-public class PosicaoDiaria {
+import jakarta.persistence.*;
+
+@Entity
+@Table(name = "negociacaoDiaria")
+public class NegociacaoDiaria {
+    @Id
     private long id;
+
+    @ManyToOne
+    @JoinColumn(name = "cotista_id")
     private Cotista cotista;
+
+    @ManyToOne
+    @JoinColumn(name = "cota_id")
     private Cota cota;
     private int quantidade;
 
