@@ -35,12 +35,5 @@ public class NegociacaoDiariaService {
         return negociacaoDiariaRepository.findAll(pageable).map(negociacaoDiariaMapper::responseNegociacaoDiaria);
     }
 
-    public boolean delete(Long id) {
-        Optional<NegociacaoDiaria> usuario = negociacaoDiariaRepository.findById(id);
-        if (usuario.isPresent()) {
-            negociacaoDiariaRepository.delete(usuario.get());
-            return true;
-        }
-        return false;
-    }
+
 }
