@@ -6,11 +6,14 @@ import jakarta.persistence.*;
 @Table(name = "negociacaoDiaria")
 public class NegociacaoDiaria {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "negociacaoDiaria_seq")
+    @SequenceGenerator(name = "negociacaoDiaria_seq", sequenceName = "NEGOCIACAODIARIA_SEQ", allocationSize = 1)
     private long id;
 
     @ManyToOne
     @JoinColumn(name = "cotista_id")
     private Cotista cotista;
+
 
     @ManyToOne
     @JoinColumn(name = "cota_id")
@@ -28,6 +31,15 @@ public class NegociacaoDiaria {
 
     public Cota getCota() {
         return cota;
+    }
+
+
+    public void setCotista(Cotista cotista) {
+        this.cotista = cotista;
+    }
+
+    public void setCota(Cota cota) {
+        this.cota = cota;
     }
 
     public int getQuantidade() {

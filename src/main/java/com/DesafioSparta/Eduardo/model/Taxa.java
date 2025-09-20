@@ -1,8 +1,6 @@
 package com.DesafioSparta.Eduardo.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 
 import java.math.BigDecimal;
 @Entity
@@ -10,6 +8,8 @@ import java.math.BigDecimal;
 public class Taxa {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "taxa_seq")
+    @SequenceGenerator(name = "taxa_seq", sequenceName = "TAXA_SEQ", allocationSize = 1)
     private Long id;
     private String nome;
     private double percentual;

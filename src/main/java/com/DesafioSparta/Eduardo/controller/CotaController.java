@@ -35,5 +35,13 @@ public class CotaController {
         return new ResponseEntity<>(cotaService.findAll(pageable), HttpStatus.OK);
     }
 
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Void> negDelete(@PathVariable Long id) {
+        boolean deletado = cotaService.delete(id);
+        if (!deletado) {
+            return new ResponseEntity<>(null, HttpStatus.BAD_REQUEST);
+        }
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 
 }

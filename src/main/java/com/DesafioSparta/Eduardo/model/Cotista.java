@@ -8,6 +8,8 @@ import java.util.List;
 @Table(name="cotista")
 public class Cotista {
     @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "cotista_seq")
+    @SequenceGenerator(name = "cotista_seq", sequenceName = "COTISTA_SEQ", allocationSize = 1)
     private Long id;
     private String nome;
 

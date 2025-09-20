@@ -17,7 +17,7 @@ public class CotaMapper {
         return new CotaResponse(
                 cota.getId(),
                 cota.getData(),
-                cota.getCotaAtual()
+                cota.getValorCotaAtual()
         );
     }
 }
