@@ -5,16 +5,18 @@ import com.DesafioSparta.Eduardo.dto.TaxaResponse;
 import com.DesafioSparta.Eduardo.model.Taxa;
 
 public class TaxaMapper {
-    public Taxa requestTaxa (TaxaRequest taxaRequest){
+
+    public Taxa requestTaxa(TaxaRequest taxaRequest) {
         Taxa taxa = new Taxa();
         taxa.setPercentual(taxaRequest.percentual());
-
+        taxa.setNome(taxaRequest.nome());
         return taxa;
     }
 
     public TaxaResponse responseTaxa (Taxa taxa){
         return new TaxaResponse(
-                taxa.getPercentual()
+                taxa.getPercentual(),
+                taxa.getNome()
         );
     }
 }
