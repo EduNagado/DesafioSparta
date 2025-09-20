@@ -4,12 +4,15 @@ import com.DesafioSparta.Eduardo.Mapper.CotaMapper;
 import com.DesafioSparta.Eduardo.dto.CotaRequest;
 import com.DesafioSparta.Eduardo.dto.CotaResponse;
 import com.DesafioSparta.Eduardo.model.Cota;
+import com.DesafioSparta.Eduardo.model.NegociacaoDiaria;
 import com.DesafioSparta.Eduardo.repository.CotaRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
+import java.util.Optional;
 
 @Service
 public class CotaService {
@@ -28,6 +31,15 @@ public class CotaService {
 
     public Page<CotaResponse> findAll (Pageable pageable){
        return cotaRepository.findAll(pageable).map(cotaMapper::responseCota);
+    }
+
+    public boolean delete(Long id) {
+        Optional<Cota> usuario = cotaRepository.findById(id);
+        if (usuario.isPresent()) {
+            cotaRepository.delete(usuario.get());
+            return true;
+        }
+        return false;
     }
 
 }
