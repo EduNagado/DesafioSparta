@@ -1,7 +1,7 @@
 # DesafioSparta
 
 ## 📋 Sobre o Projeto
-Uma API RESTful que calcula a taxa de administração paga por cada cotista de um fundo de investimento.
+Uma API REST que calcula a taxa de administração paga por cada cotista de um fundo de investimento.
 
 ## Tecnologias utilizadas
 
