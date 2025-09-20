@@ -3,6 +3,7 @@ package com.DesafioSparta.Eduardo.dto;
 import java.math.BigDecimal;
 
 public record TaxaResponse(
-    double percentual
+    double percentual,
+    String nome
 ) {
 }
